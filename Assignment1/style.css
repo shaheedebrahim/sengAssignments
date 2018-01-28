@@ -64,5 +64,20 @@
     background-color: #2e5a0e;
 }
 
+#judges {
+    border-collapse: collapse;
+    margin-right: 10px;
+}
+
+#judges td, #judges th {
+    border: 1px solid black;
+    padding: 10px;
+}
+#judges th {
+    text-align: left;
+    background-color: #18bc9c;
+    color: white;
+}
+
 
 
