@@ -10,14 +10,23 @@
 }
 
 #tutorial-header{
-    text-align: center;
     background-image: url("images/programming.jpeg");
     padding: 150px;
+}
+
+#resources-header{
+    background-image: url("images/books.jpeg");
+    padding: 100px;
+}
+
+#tutorial-header, #resources-header{
+    text-align: center;
     color: white;
     background-size: 100%;
     font-size: 350%;
     margin-top: 5px;
     margin-bottom: 5px;
+
 }
 
 .navbar{
