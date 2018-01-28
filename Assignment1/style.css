@@ -34,13 +34,13 @@
     color: #18bc9c;
 }
 
-.main-content .information .rule-explanation{
+.main-content .information .side-by-side-elements{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-.main-content .information .rule-explanation .left-side{
+.main-content .information .side-by-side-elements .left-side{
     flex-basis: 70%;
 }
 
