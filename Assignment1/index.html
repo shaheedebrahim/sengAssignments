@@ -9,36 +9,64 @@
 
 <body>
     <div class="navbar">
-        <a href="#home"> Home</a>
-        <a href="#resources"> Resources</a>
+        <a href="index.html"> Home</a>
+        <a href="beginnersTutorial.html"> Beginners Tutorial</a>
         <a href="#onlineJudges"> Online Judges</a>
-        <a href="#beginnersTutorial"> Beginners Tutorial</a>
+        <a href="#resources"> Resources</a>
     </div>
 
-    <h1> An Introduction To Competitive Programming </h1>
+    <h1 id="intro-header"> An Introduction To Competitive Programming </h1>
 
     <!--<a id="main_page_image" href="http://codebrace.net/2016/10/getting-started-with-cp/">
         <img src=
         "http://codebrace.net/wp-content/uploads/2016/10/main-qimg-f939681b0b47e5540398244db5c8966f-410x300.png">
       </a>      
 -->
-    <h3>What is Competitive Programming?</h3> 
-    <p>Competitive programming is a mind sport usually held over the Internet or a local network, 
-        involving participants trying to program according to provided specifications. 
-        <a href="https://en.wikipedia.org/wiki/Competitive_programming">Source</a></p> 
-    <p> This explanation is complex and not entirely clear. To put it in laymens terms, competitive
-        programming is a contest held for a specified amount of time where participants are challenged
-        to solve specific problems within the time limit.
-    </p>
+    <div class="main-content">
+        <div class="left-bar"></div>
 
-    <div class="rule-explanation">
-        <div class="left-side">
-            <h3> What Are The Rules? </h3>
-            <p> The rules to competitive programming vary by contest but since the most reknown contest is the
-                ACM-ICPC (Association for Computing Machinery - International Collegiate Programming Contest) 
-                and most contests follow those rules we shall use them as our baselines.</p>
+        <div class="information">
+            <h3>What is Competitive Programming?</h3> 
+            <p>Competitive programming is a mind sport usually held over the Internet or a local network, 
+                involving participants trying to program according to provided specifications. 
+                <a href="https://en.wikipedia.org/wiki/Competitive_programming">Source</a></p> 
+            <p> This explanation is complex and not entirely clear. To put it in laymens terms, competitive
+                programming is a contest held for a specified amount of time where participants are challenged
+                to solve specific problems within the time limit.
+            </p>
+
+            <div class="rule-explanation">
+                <div class="left-side">
+                    <h3> What Are The Rules? </h3>
+                    <p> The rules to competitive programming vary by contest but since the most reknown contest is the
+                        ACM-ICPC (Association for Computing Machinery - International Collegiate Programming Contest) 
+                        and most contests follow those rules we shall use them as our baselines. The most
+                    important rules are: 
+                    <a href="https://www.win.tue.nl/~wstomv/contests/acm-icpc-rules-summary.html"> source </a> </p>
+                    <ol>
+                        <li> A team can consist of at most 3 people</li>
+                        <li> Each team gets to use at most 1 computer </li>
+                        <li> Use of printed books and program listings is allowed </li>
+                        <li> Use of calculators, CDs, mobile phones, Internet search, etc. is prohibited </li>
+                        <li> Teams may not communicate with each other during the contest </li>
+                        <li> Each submission is judged during the contest as the following </li>
+                            <ul>
+                                <li> compile-time error</li> 
+                                <li> run-time error </li>
+                                <li> memory-limit exceeded </li>
+                                <li> incorrect output format</li>
+                                <li> wrong answer </li>
+                                <li> accepted</li> 
+                            </ul>
+                        <li> Lastly, ranking of teams is determined by number of problem solved, and in the case
+                            of a tie, whomever solved the problems in the least amount of total time </li>
+                    </ol>
+                </div>
+                <img id="rules-img" src="images/rules.png" height="200" width="225" > 
+            </div>
         </div>
-        <img id="rules-img" src="images/rules.png" height="200" width="225" > 
+
+        <div class="right-bar"></div>
     </div>
 </body>
 

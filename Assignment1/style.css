@@ -1,11 +1,23 @@
-h1{
+#intro-header{
     background-color: #18bc9c;
     text-align: center;
     padding: 20px;
-    margin: 0px;
+    margin-top: 0px;
+    margin-bottom: 2px;
     color: white;
     padding-top: 50px;
     padding-bottom: 50px;
+}
+
+#tutorial-header{
+    text-align: center;
+    background-image: url("images/programming.jpeg");
+    padding: 150px;
+    color: white;
+    background-size: 100%;
+    font-size: 350%;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .navbar{
@@ -22,12 +34,35 @@ h1{
     color: #18bc9c;
 }
 
-.rule-explanation{
+.main-content .information .rule-explanation{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.main-content .information .rule-explanation .left-side{
+    flex-basis: 70%;
+}
+
+.main-content{
     display: flex;
     flex-direction: row;
 }
 
-.rule-explanation .left-side{
-    flex-basis: 70%;
+.main-content .left-bar{
+    flex-basis: 10%;
+    background-color: #2e5a0e;
+    margin-right: 20px;
 }
+
+.main-content .information {
+    flex-basis: 80%;
+}
+
+.main-content .right-bar{
+    flex-basis: 10%;
+    background-color: #2e5a0e;
+}
+
+
 
