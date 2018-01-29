@@ -1,9 +1,10 @@
+/* Shaheed Ebrahim */
 #intro-header{
     background-color: #18bc9c;
     text-align: center;
     padding: 20px;
     margin-top: 0px;
-    margin-bottom: 2px;
+    margin-bottom: 0px;
     color: white;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -24,8 +25,8 @@
     color: white;
     background-size: 100%;
     font-size: 350%;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 
 }
 
@@ -40,13 +41,12 @@
 }
 
 .navbar a:hover{
-    color: #18bc9c;
+    text-decoration: underline;
 }
 
 .main-content .information .side-by-side-elements{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
 }
 
 .main-content .information .side-by-side-elements .left-side{
@@ -86,6 +86,9 @@
     text-align: left;
     background-color: #18bc9c;
     color: white;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
