@@ -11,18 +11,47 @@ http.listen( port, function () {
 
 app.use(express.static(__dirname + '/public'));
 
+let chatHistory = [];
 let onlineUsers = [];
 // listen to 'chat' messages
 io.on('connection', function(socket){
     var sillyName = generateName();
+    while (onlineUsers.indexOf(sillyName) !== -1){
+        console.log(onlineUsers.indexOf(sillyName));
+        sillyName = generateName();
+    }
     onlineUsers.push(sillyName);
     socket.emit('setUsername', sillyName);
+    socket.emit('chatHistory', chatHistory);
     io.emit('connectedDisconnected', onlineUsers); 
 
+    socket.on('changeName', function(list){
+        let newName = list['newName'];
+        if (onlineUsers.indexOf(newName) !== -1){
+            socket.emit('chat', "Error name already taken");
+        }
+        else {
+            let currentName = list['currentName'];
+            let indexCurrent = onlineUsers.indexOf(currentName);
+            console.log(onlineUsers);
+            console.log(currentName);
+            if (indexCurrent === -1){
+                socket.emit('chat', "Error occured");
+            }else{
+                onlineUsers.splice(indexCurrent, 1);
+                socket.emit('setUsername', newName);
+                onlineUsers.push(newName);
+                sillyName = newName;
+                io.emit('connectedDisconnected', onlineUsers);
+                socket.emit('chat', "Username successfully changed");
+            }
+        }
+    });
     socket.on('chat', function(msg){
         var d = new Date();
         var time = d.getHours() + ":"+d.getMinutes();
         msg = time +  " " + sillyName +" : "+msg;
+        chatHistory.push(msg);
 	io.emit('chat', msg);
     });
     
@@ -31,6 +60,5 @@ io.on('connection', function(socket){
         console.log(onlineUsers);
         onlineUsers.splice(index, 1);
         io.emit('connectedDisconnected', onlineUsers);
-        console.log(onlineUsers);
     });
 });
