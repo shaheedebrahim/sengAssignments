@@ -7,6 +7,9 @@ $(function() {
             let newNickName = msg.substring(6, msg.length);
             socket.emit('changeName', {'newName':newNickName, 
                 'currentName':$('#username-bar').text()});
+        }else if (msg.substring(0,11) === "/nickcolor "){
+            socket.emit('changeColor', msg.substring(11,msg.length));
+                
         }else{
             socket.emit('chat', msg);
         }
@@ -14,7 +17,9 @@ $(function() {
         return false;
     });
     socket.on('chat', function(msg){
-	$('#messages').append($('<li>').text(msg));
+        //$('#messages').append($('<li>').text("asdfasdf")
+            //.append($('<span style="color:red">').text(msg)));
+        $('#messages').append($('<li>').html(msg)); 
     });
     socket.on('setUsername', function(sillyName){
         $('#username-bar').text(sillyName);
@@ -22,7 +27,7 @@ $(function() {
 
     socket.on('chatHistory', function(chatHistory){
         for (let msg of chatHistory){
-            $('#messages').append($('<li>').text(msg));
+            $('#messages').append($('<li>').html(msg));
         }
     });
     socket.on('connectedDisconnected', function(onlineUsers){

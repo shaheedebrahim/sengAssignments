@@ -16,6 +16,7 @@ let onlineUsers = [];
 // listen to 'chat' messages
 io.on('connection', function(socket){
     var sillyName = generateName();
+    var color = "black"
     while (onlineUsers.indexOf(sillyName) !== -1){
         console.log(onlineUsers.indexOf(sillyName));
         sillyName = generateName();
@@ -25,6 +26,10 @@ io.on('connection', function(socket){
     socket.emit('chatHistory', chatHistory);
     io.emit('connectedDisconnected', onlineUsers); 
 
+    socket.on('changeColor', function(newColor){
+        color = newColor;
+        socket.emit('chat', "Color succesfully changed");
+    });
     socket.on('changeName', function(list){
         let newName = list['newName'];
         if (onlineUsers.indexOf(newName) !== -1){
@@ -50,9 +55,11 @@ io.on('connection', function(socket){
     socket.on('chat', function(msg){
         var d = new Date();
         var time = d.getHours() + ":"+d.getMinutes();
-        msg = time +  " " + sillyName +" : "+msg;
+        msg = time +  " " + "<span style='color:"+color+"'>"+sillyName+"</span>" +" : "+msg;
         chatHistory.push(msg);
-	io.emit('chat', msg);
+	socket.broadcast.emit('chat', msg);
+        msg = "<b>"+msg+"</b>";
+        socket.emit('chat', msg);
     });
     
     socket.on('disconnect', function(){
