@@ -1,0 +1,77 @@
+html, body{
+    height: 100%;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2px;
+}
+#messages {
+    flex: 1;
+    flex-basis: 90%;
+    border: 1px solid black;
+    border-radius: 5px;
+    list-style-type: none; margin: 0; padding: 0;
+    margin-left:20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    overflow: auto;
+    max-height: max-content;
+
+}
+#messages li {
+    padding: 5px 10px;
+}
+#messages li:nth-child(odd) {
+    background: #eee;
+}
+#username-bar {
+    margin-top: 4px;
+    margin-left:20px;
+    margin-right:20px;
+    border-style: solid;
+    border-color: red;
+    border-width: 1px;
+    border-radius: 5px;
+}
+form{
+    flex: 1 1 5%;
+    display: flex;
+    flex-direction: row;
+    align-items:stretch;
+    margin-bottom:10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+form #m{
+    flex: 1 1 90%;
+}
+form button{
+    flex: 1 1 10%;
+}
+.side-by-side{
+    display: flex;
+    flex: 1 1 95%;
+}
+.side-by-side #messages{
+    flex: 1;
+    flex-basis: 90%;
+}
+
+#users{
+    flex: 1;
+    border-style: solid;
+    border-color: black;
+    border-width:1px;
+    border-radius:5px;
+    list-style-type: none;
+    margin-right: 20px;
+    padding-left: 5px;
+    padding-right: 40px;
+    margin-top: 0px;
+    color: #FFF;
+    background-color: #546E7A;
+}
+#users li{
+
+}
