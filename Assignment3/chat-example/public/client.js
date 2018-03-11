@@ -16,12 +16,16 @@ $(function() {
         $('#m').val('');
         return false;
     });
+    socket.on('initialize', function(){
+        socket.emit('initialize', document.cookie);
+    });
     socket.on('chat', function(msg){
         //$('#messages').append($('<li>').text("asdfasdf")
             //.append($('<span style="color:red">').text(msg)));
         $('#messages').append($('<li>').html(msg)); 
     });
     socket.on('setUsername', function(sillyName){
+        document.cookie = "name="+sillyName;
         $('#username-bar').text(sillyName);
     });
 
@@ -36,5 +40,7 @@ $(function() {
             $('#users').append($('<li>').text(user));
         }
     });
-
+    socket.on('forceDisconnect', function(){
+        socket.disconnect();
+    });
 });
