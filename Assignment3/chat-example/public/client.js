@@ -20,9 +20,9 @@ $(function() {
         socket.emit('initialize', document.cookie);
     });
     socket.on('chat', function(msg){
-        //$('#messages').append($('<li>').text("asdfasdf")
-            //.append($('<span style="color:red">').text(msg)));
         $('#messages').append($('<li>').html(msg)); 
+        //Code retreived from: https://stackoverflow.com/questions/31716529/how-can-i-scroll-down-to-the-last-li-item-in-a-dynamically-added-ul/31716758
+        $('#messages').animate({scrollTop: $('#messages').prop("scrollHeight")}, 500);
     });
     socket.on('setUsername', function(sillyName){
         document.cookie = "name="+sillyName;
