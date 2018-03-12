@@ -8,15 +8,13 @@ body{
     margin-top: 2px;
 }
 #messages {
-    display: flex;
-    flex: 1 0 90%;
-    flex-direction: column;
+    flex: 1 1 90%;
     list-style-type: none; margin: 0; padding: 0;
     margin-left:10px;
     margin-right: 20px;
     margin-bottom: 20px;
-    overflow: auto;
-    max-height: 97%;
+    overflow: scroll;
+    max-height: 100%;
     margin-top:auto;
 
 }
@@ -27,6 +25,8 @@ body{
     background: #eee;
 }
 #username-bar {
+    flex: 1 1 5%
+    padding-left: 4px;
     margin-top: 4px;
     margin-left:10px;
     margin-right:20px;
@@ -42,6 +42,7 @@ form{
     margin-bottom:10px;
     margin-left: 10px;
     margin-right: 20px;
+    margin-top: 10px;
 }
 form #m{
     flex: 1 1 90%;
@@ -52,11 +53,12 @@ form button{
 }
 .side-by-side{
     display: flex;
-    flex: 1 1 95%;
+    max-height:75%;
+    flex: 1 1 80%;
 }
 
 #users{
-    flex: 1;
+    flex: 1 1 10%;
     border-style: solid;
     border-color: black;
     border-width:1px;
@@ -71,7 +73,7 @@ form button{
 }
 
 h1{
-    flex: 1 1 10%;
+    flex: 1 0 10%;
     background-color: #18bc9c; 
     margin-top: 5px;
     margin-bottom: 5px;

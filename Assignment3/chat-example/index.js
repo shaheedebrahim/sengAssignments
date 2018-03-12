@@ -60,7 +60,7 @@ io.on('connection', function(socket){
                 socket.emit('chat', "Error occured");
             }else{
                 onlineUsers.splice(indexCurrent, 1);
-                usedNames.splice(indexCurrent, 1);
+                usedNames.splice(indexCurrent2, 1);
                 socket.emit('setUsername', newName);
                 onlineUsers.push(newName);
                 usedNames.push(newName);
