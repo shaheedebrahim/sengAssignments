@@ -71,8 +71,8 @@ io.on('connection', function(socket){
         }
     });
     socket.on('chat', function(msg){
-        var d = new Date();
-        var time = d.getHours() + ":"+d.getMinutes();
+        var d = '['+new Date().toLocaleString('en-US',{hour: 'numeric', minute:'numeric', hour12: false})+']';
+        var time = d; 
         msg = time +  " " + "<span style='color:"+color+"'>"+sillyName+"</span>" +" : "+msg;
         chatHistory.push(msg);
 	socket.broadcast.emit('chat', msg);

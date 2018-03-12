@@ -71,6 +71,9 @@ form button{
     color: #FFF;
     background-color: #546E7A;
 }
+#users li{
+    border-bottom: 2px solid red;
+}
 
 h1{
     flex: 1 0 10%;
